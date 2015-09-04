@@ -30,7 +30,7 @@
   "dependencies": {
     "graceful-fs": "^4.1.2",
     "parse-json": "^2.2.0",
-    "pify": "^1.1.0",
+    "pify": "^2.0.0",
     "pinkie-promise": "^1.0.0",
     "strip-bom": "^2.0.0"
   },
