@@ -1,16 +1,16 @@
-'use strict';
-var path = require('path');
-var test = require('ava');
-var fn = require('./');
-var fixture = path.join(__dirname, 'package.json');
+import path from 'path';
+import test from 'ava';
+import fn from './';
 
-test('async', function (t) {
-	return fn(fixture).then(function (data) {
-		t.is(data.name, 'load-json-file');
-	});
+const fixture = path.join(__dirname, 'package.json');
+
+test('async', async t => {
+	const data = await fn(fixture);
+
+	t.is(data.name, 'load-json-file');
 });
 
-test('sync', function (t) {
+test('sync', t => {
 	t.is(fn.sync(fixture).name, 'load-json-file');
 	t.end();
 });
