@@ -10,7 +10,7 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -31,11 +31,13 @@
     "graceful-fs": "^4.1.2",
     "parse-json": "^2.2.0",
     "pify": "^2.0.0",
-    "pinkie-promise": "^2.0.0",
     "strip-bom": "^2.0.0"
   },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
