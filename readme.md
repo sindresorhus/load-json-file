@@ -2,7 +2,7 @@
 
 > Read and parse a JSON file
 
-[Strips UTF-8 BOM](https://github.com/sindresorhus/strip-bom), uses [`graceful-fs`](https://github.com/isaacs/node-graceful-fs), and throws more [helpful JSON errors](https://github.com/sindresorhus/parse-json).
+[Strips UTF-8 BOM](https://github.com/sindresorhus/strip-bom), uses [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) and throws more [helpful JSON errors](https://github.com/sindresorhus/parse-json).
 
 
 ## Install
