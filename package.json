@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "graceful-fs": "^4.1.2",
-    "parse-json": "^3.0.0",
+    "parse-json": "^4.0.0",
     "pify": "^3.0.0",
     "strip-bom": "^3.0.0"
   },
