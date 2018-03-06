@@ -26,13 +26,29 @@ loadJsonFile('foo.json').then(json => {
 
 ## API
 
-### loadJsonFile(filepath)
+### loadJsonFile(filepath, [options])
 
 Returns a promise for the parsed JSON.
 
-### loadJsonFile.sync(filepath)
+### loadJsonFile.sync(filepath, [options])
 
 Returns the parsed JSON.
+
+#### options
+
+Type: `Object`
+
+##### beforeParse
+
+Type: `Function`
+
+Applies a function to the JSON string before parsing.
+
+##### reviver
+
+Type: `Function`
+
+Prescribes how the value originally produced by parsing is transformed, before being returned. See [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
 
 
 ## Related
