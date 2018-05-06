@@ -13,12 +13,16 @@ test('sync', t => {
 	t.is(m.sync(fixture).name, 'load-json-file');
 });
 
-test('beforeParse', async t => {
-	const data = await m(fixture, {beforeParse: s => s.replace('"name": "load-json-file"', '"name": "foo"')});
+test('beforeParse option', async t => {
+	const data = await m(fixture, {
+		beforeParse: string => string.replace('"name": "load-json-file"', '"name": "foo"')
+	});
 	t.is(data.name, 'foo');
 });
 
-test('reviver', async t => {
-	const data = await m(fixture, {reviver: (k, v) => k === 'name' ? 'foo' : v});
+test('reviver option', async t => {
+	const data = await m(fixture, {
+		reviver: (key, value) => key === 'name' ? 'foo' : value
+	});
 	t.is(data.name, 'foo');
 });

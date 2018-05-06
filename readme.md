@@ -8,7 +8,7 @@
 ## Install
 
 ```
-$ npm install --save load-json-file
+$ npm install load-json-file
 ```
 
 
@@ -26,7 +26,7 @@ loadJsonFile('foo.json').then(json => {
 
 ## API
 
-### loadJsonFile(filepath, [options])
+### loadJsonFile(filePath, [options])
 
 Returns a promise for the parsed JSON.
 
@@ -48,7 +48,7 @@ Applies a function to the JSON string before parsing.
 
 Type: `Function`
 
-Prescribes how the value originally produced by parsing is transformed, before being returned. See [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
+Prescribes how the value originally produced by parsing is transformed, before being returned. See the [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
 
 
 ## Related
