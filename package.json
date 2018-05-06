@@ -1,6 +1,6 @@
 {
 	"name": "load-json-file",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"description": "Read and parse a JSON file",
 	"license": "MIT",
 	"repository": "sindresorhus/load-json-file",
