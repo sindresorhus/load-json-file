@@ -16,7 +16,7 @@ interface Options {
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
  * @example
- * import * as loadJsonFile from 'load-json-file';
+ * import loadJsonFile from 'load-json-file';
  *
  * loadJsonFile.sync('foo.json')
  * console.log(json);
