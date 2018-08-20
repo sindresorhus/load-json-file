@@ -17,6 +17,6 @@ const parse = (data, filePath, options = {}) => {
 
 const loadJsonFile = (filePath, options) => pify(fs.readFile)(filePath, 'utf8').then(data => parse(data, filePath, options));
 
-module.export = loadJsonFile;
+module.exports = loadJsonFile;
 module.exports.default = loadJsonFile;
 module.exports.sync = (filePath, options) => parse(fs.readFileSync(filePath, 'utf8'), filePath, options);
