@@ -15,7 +15,6 @@ interface Options {
  *
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
- * @returns {void}
  * @example
  * import * as loadJsonFile from 'load-json-file';
  *
@@ -29,13 +28,12 @@ export function sync(filepath: string, options?: Options): void;
  *
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
- * @returns {Promise<void>}
  * @example
- * import loadJsonFile 'load-json-file';
+ * import loadJsonFile from 'load-json-file';
  *
  * (async () => {
- *     await loadJsonFile('foo.json');
- *     console.log('done');
+ * 	await loadJsonFile('foo.json');
+ * 	console.log('done');
  * })();
  */
 export default function loadJsonFile(filepath: string, options?: Options): Promise<void>;
