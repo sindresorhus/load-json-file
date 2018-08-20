@@ -16,8 +16,10 @@
 		"test": "xo && ava"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
+	"types": "index.d.ts",
 	"keywords": [
 		"read",
 		"json",
