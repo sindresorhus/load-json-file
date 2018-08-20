@@ -13,7 +13,7 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo --ignore index.d.ts && ava"
+		"test": "xo && ava"
 	},
 	"files": [
 		"index.js",
@@ -37,5 +37,10 @@
 	"devDependencies": {
 		"ava": "*",
 		"xo": "*"
+	},
+	"xo": {
+		"ignores": [
+			"index.d.ts"
+		]
 	}
 }

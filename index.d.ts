@@ -11,7 +11,7 @@ interface Options {
 }
 
 /**
- * Read and parse a JSON file
+ * Read and parse a JSON file.
  *
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
@@ -25,7 +25,7 @@ interface Options {
 export function sync(filepath: string, options?: Options): void;
 
 /**
- * Read and parse a JSON file
+ * Read and parse a JSON file.
  *
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
