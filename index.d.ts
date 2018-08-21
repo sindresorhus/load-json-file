@@ -1,13 +1,13 @@
-interface Options {
+export interface Options {
 	/**
 	 * Applies a function to the JSON string before parsing.
 	 */
-	beforeParse?: Function
+	beforeParse?: (data: string) => string;
 	/**
 	 * Prescribes how the value originally produced by parsing is transformed, before being returned.
 	 * See the [JSON.parse docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
 	 */
-	reviver?: Function
+	reviver?: (key: string, value: any) => any;
 }
 
 /**
