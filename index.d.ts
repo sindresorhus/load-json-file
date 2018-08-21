@@ -18,10 +18,11 @@ interface Options {
  * @example
  * import * as loadJsonFile from 'load-json-file';
  *
- * loadJsonFile.sync('foo.json')
+ * const json = loadJsonFile.sync('foo.json')
  * console.log(json);
+ * //=> {foo: true}
  */
-export function sync(filepath: string, options?: Options): void;
+export function sync<T = any>(filepath: string, options?: Options): T;
 
 /**
  * Read and parse a JSON file.
@@ -32,8 +33,9 @@ export function sync(filepath: string, options?: Options): void;
  * import loadJsonFile from 'load-json-file';
  *
  * (async () => {
- * 	await loadJsonFile('foo.json');
- * 	console.log('done');
+ * 	const json = await loadJsonFile('foo.json');
+ * 	console.log(json);
+ * 	//=> {foo: true}
  * })();
  */
-export default function loadJsonFile(filepath: string, options?: Options): Promise<void>;
+export default function loadJsonFile<T = any>(filepath: string, options?: Options): Promise<T>;
