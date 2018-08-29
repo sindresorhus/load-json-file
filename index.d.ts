@@ -19,6 +19,7 @@ export interface Options {
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
  * @example
+ *
  * import * as loadJsonFile from 'load-json-file';
  *
  * const json = loadJsonFile.sync('foo.json');
@@ -32,6 +33,7 @@ export function sync<T = any>(filePath: string, options?: Options): T;
  * Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
  *
  * @example
+ *
  * import loadJsonFile from 'load-json-file';
  *
  * (async () => {
