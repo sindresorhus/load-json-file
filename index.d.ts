@@ -8,7 +8,7 @@ export interface Options {
 	beforeParse?: BeforeParse;
 	/**
 	 * Prescribes how the value originally produced by parsing is transformed, before being returned.
-	 * See the [JSON.parse docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
+	 * See the [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
 	 */
 	reviver?: Reviver;
 }
