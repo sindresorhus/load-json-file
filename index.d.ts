@@ -25,7 +25,7 @@ export interface Options {
  * const json = loadJsonFile.sync('foo.json');
  * //=> {foo: true}
  */
-export function sync<T = any>(filePath: string, options?: Options): T;
+export function sync<T = unknown>(filePath: string, options?: Options): T;
 
 /**
  * Read and parse a JSON file.
@@ -41,4 +41,4 @@ export function sync<T = any>(filePath: string, options?: Options): T;
  * 	//=> {foo: true}
  * })();
  */
-export default function loadJsonFile<T = any>(filePath: string, options?: Options): Promise<T>;
+export default function loadJsonFile<T = unknown>(filePath: string, options?: Options): Promise<T>;

@@ -10,7 +10,7 @@ import loadJsonFile, {sync, Reviver, BeforeParse} from '.';
 
 	expectType<BeforeParse>((data) => data);
 
-	expectType<void>(await loadJsonFile('unicorn.json'));
+	expectType<unknown>(await loadJsonFile('unicorn.json'));
 
-	expectType<void>(sync('unicorn.json'));
+	expectType<unknown>(sync('unicorn.json'));
 })();
