@@ -38,10 +38,5 @@
 		"ava": "*",
 		"tsd-check": "^0.1.0",
 		"xo": "*"
-	},
-	"xo": {
-		"ignores": [
-			"index.d.ts"
-		]
 	}
 }
