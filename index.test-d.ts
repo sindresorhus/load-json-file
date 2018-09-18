@@ -1,8 +1,6 @@
 import {expectType} from 'tsd-check';
 import loadJsonFile, {sync, Reviver, BeforeParse} from '.';
 
-// To-Do => Expand Tests
-// https://github.com/sindresorhus/write-json-file/blob/master/index.test-d.ts
 expectType<Reviver>(() => 1);
 expectType<Reviver>((a: string) => a.length);
 expectType<Reviver>((a: string, b: string) => a.length - b.length);
