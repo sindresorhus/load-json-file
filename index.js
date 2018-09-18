@@ -15,5 +15,8 @@ const parse = (data, filePath, options = {}) => {
 	return parseJson(data, options.reviver, path.relative(process.cwd(), filePath));
 };
 
-module.exports = (filePath, options) => pify(fs.readFile)(filePath, 'utf8').then(data => parse(data, filePath, options));
+const loadJsonFile = (filePath, options) => pify(fs.readFile)(filePath, 'utf8').then(data => parse(data, filePath, options));
+
+module.exports = loadJsonFile;
+module.exports.default = loadJsonFile;
 module.exports.sync = (filePath, options) => parse(fs.readFileSync(filePath, 'utf8'), filePath, options);
