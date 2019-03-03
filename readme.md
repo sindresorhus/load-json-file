@@ -17,10 +17,10 @@ $ npm install load-json-file
 ```js
 const loadJsonFile = require('load-json-file');
 
-loadJsonFile('foo.json').then(json => {
-	console.log(json);
+(async () => {
+	console.log(await loadJsonFile('foo.json'));
 	//=> {foo: true}
-});
+})();
 ```
 
 

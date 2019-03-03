@@ -10,10 +10,10 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"test": "xo && nyc ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -31,12 +31,12 @@
 	"dependencies": {
 		"graceful-fs": "^4.1.15",
 		"parse-json": "^4.0.0",
-		"pify": "^4.0.1",
 		"strip-bom": "^3.0.0",
 		"type-fest": "^0.3.0"
 	},
 	"devDependencies": {
 		"ava": "^1.4.1",
+		"nyc": "^13.3.0",
 		"tsd": "^0.7.2",
 		"xo": "^0.24.0"
 	}
