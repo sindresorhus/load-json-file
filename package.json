@@ -13,7 +13,7 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd-check"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -29,14 +29,15 @@
 		"load"
 	],
 	"dependencies": {
-		"graceful-fs": "^4.1.2",
+		"graceful-fs": "^4.1.15",
 		"parse-json": "^4.0.0",
-		"pify": "^3.0.0",
-		"strip-bom": "^3.0.0"
+		"pify": "^4.0.1",
+		"strip-bom": "^3.0.0",
+		"type-fest": "^0.3.0"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"tsd-check": "^0.2.1",
-		"xo": "*"
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
 	}
 }
