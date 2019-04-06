@@ -1,7 +1,7 @@
 import {JsonValue} from 'type-fest';
 
 declare namespace loadJsonFile {
-	type Reviver = (this: unknown, key: string, value: unknown) => unknown;
+	type Reviver = (this: unknown, key: string, value: any) => unknown;
 	type BeforeParse = (data: string) => string;
 
 	interface Options {
