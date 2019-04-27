@@ -15,6 +15,5 @@ const parse = (data, filePath, options = {}) => {
 	return parseJson(data, options.reviver, path.relative(process.cwd(), filePath));
 };
 
-const loadJsonFile = async (filePath, options) => parse(await promisify(fs.readFile)(filePath, 'utf8'), filePath, options);
-module.exports = loadJsonFile;
+module.exports = async (filePath, options) => parse(await promisify(fs.readFile)(filePath, 'utf8'), filePath, options);
 module.exports.sync = (filePath, options) => parse(fs.readFileSync(filePath, 'utf8'), filePath, options);

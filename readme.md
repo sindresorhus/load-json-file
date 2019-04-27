@@ -28,7 +28,7 @@ const loadJsonFile = require('load-json-file');
 
 ### loadJsonFile(filePath, [options])
 
-Returns a promise for the parsed JSON.
+Returns a `Promise<unknown>` with the parsed JSON.
 
 ### loadJsonFile.sync(filepath, [options])
 
@@ -36,7 +36,7 @@ Returns the parsed JSON.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### beforeParse
 

@@ -50,9 +50,6 @@ declare const loadJsonFile: {
 	```
 	*/
 	sync<T = JsonValue>(filePath: string, options?: loadJsonFile.Options): T;
-
-	// TODO: Remove this for the next major release
-	default: typeof loadJsonFile;
 };
 
 export = loadJsonFile;
