@@ -26,11 +26,11 @@ const loadJsonFile = require('load-json-file');
 
 ## API
 
-### loadJsonFile(filePath, [options])
+### loadJsonFile(filePath, options?)
 
 Returns a `Promise<unknown>` with the parsed JSON.
 
-### loadJsonFile.sync(filepath, [options])
+### loadJsonFile.sync(filepath, options?)
 
 Returns the parsed JSON.
 
@@ -56,6 +56,14 @@ Prescribes how the value originally produced by parsing is transformed, before b
 - [write-json-file](https://github.com/sindresorhus/write-json-file) - Stringify and write JSON to a file atomically
 
 
-## License
+---
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-load-json-file?utm_source=npm-load-json-file&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
