@@ -30,9 +30,9 @@
 	],
 	"dependencies": {
 		"graceful-fs": "^4.1.15",
-		"parse-json": "^4.0.0",
+		"parse-json": "^5.0.0",
 		"strip-bom": "^4.0.0",
-		"type-fest": "^0.5.2"
+		"type-fest": "^0.6.0"
 	},
 	"devDependencies": {
 		"ava": "^2.1.0",
