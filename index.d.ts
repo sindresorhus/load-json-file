@@ -34,7 +34,7 @@ declare const loadJsonFile: {
 	})();
 	```
 	*/
-	<T = JsonValue>(filePath: string, options?: loadJsonFile.Options): Promise<T>;
+	<ReturnValueType = JsonValue>(filePath: string, options?: loadJsonFile.Options): Promise<ReturnValueType>;
 
 	/**
 	Read and parse a JSON file.
@@ -49,7 +49,7 @@ declare const loadJsonFile: {
 	//=> {foo: true}
 	```
 	*/
-	sync<T = JsonValue>(filePath: string, options?: loadJsonFile.Options): T;
+	sync<ReturnValueType = JsonValue>(filePath: string, options?: loadJsonFile.Options): ReturnValueType;
 };
 
 export = loadJsonFile;
