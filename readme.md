@@ -1,4 +1,4 @@
-# load-json-file [![Build Status](https://travis-ci.org/sindresorhus/load-json-file.svg?branch=master)](https://travis-ci.org/sindresorhus/load-json-file)
+# load-json-file
 
 > Read and parse a JSON file
 
