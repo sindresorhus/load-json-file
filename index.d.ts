@@ -1,55 +1,48 @@
-import {JsonValue} from 'type-fest';
+// From https://github.com/sindresorhus/type-fest
+export type JsonValue = string | number | boolean | null | {[Key in string]?: JsonValue} | JsonValue[];
 
-declare namespace loadJsonFile {
-	type Reviver = (this: unknown, key: string, value: any) => unknown;
-	type BeforeParse = (data: string) => string;
+export type Reviver = (this: unknown, key: string, value: unknown) => unknown;
+export type BeforeParse = (data: string) => string;
 
-	interface Options {
-		/**
-		Applies a function to the JSON string before parsing.
-		*/
-		readonly beforeParse?: BeforeParse;
+export interface Options {
+	/**
+	Applies a function to the JSON string before parsing.
+	*/
+	readonly beforeParse?: BeforeParse;
 
-		/**
-		Prescribes how the value originally produced by parsing is transformed, before being returned.
-		See the [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
-		*/
-		readonly reviver?: Reviver;
-	}
+	/**
+	Prescribes how the value originally produced by parsing is transformed, before being returned.
+	See the [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter) for more.
+	*/
+	readonly reviver?: Reviver;
 }
 
-declare const loadJsonFile: {
-	/**
-	Read and parse a JSON file.
+/**
+Read and parse a JSON file.
 
-	Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
+It also strips UTF-8 BOM.
 
-	@example
-	```
-	import loadJsonFile = require('load-json-file');
+@example
+```
+import {loadJsonFile} from 'load-json-file';
 
-	(async () => {
-		const json = await loadJsonFile('foo.json');
-		//=> {foo: true}
-	})();
-	```
-	*/
-	<ReturnValueType = JsonValue>(filePath: string, options?: loadJsonFile.Options): Promise<ReturnValueType>;
+const json = await loadJsonFile('foo.json');
+//=> {foo: true}
+```
+*/
+export function loadJsonFile<ReturnValueType = JsonValue>(filePath: string, options?: Options): Promise<ReturnValueType>;
 
-	/**
-	Read and parse a JSON file.
+/**
+Read and parse a JSON file.
 
-	Strips UTF-8 BOM, uses graceful-fs, and throws more helpful JSON errors.
+It also strips UTF-8 BOM.
 
-	@example
-	```
-	import loadJsonFile = require('load-json-file');
+@example
+```
+import {loadJsonFileSync} from 'load-json-file';
 
-	const json = loadJsonFile.sync('foo.json');
-	//=> {foo: true}
-	```
-	*/
-	sync<ReturnValueType = JsonValue>(filePath: string, options?: loadJsonFile.Options): ReturnValueType;
-};
-
-export = loadJsonFile;
+const json = loadJsonFileSync('foo.json');
+//=> {foo: true}
+```
+*/
+export function loadJsonFileSync<ReturnValueType = JsonValue>(filePath: string, options?: Options): ReturnValueType;

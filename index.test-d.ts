@@ -1,14 +1,11 @@
-import {expectType} from 'tsd';
+import {expectType, expectAssignable} from 'tsd';
 import {JsonValue} from 'type-fest';
-import loadJsonFile = require('.');
-import {Reviver, BeforeParse} from '.';
+import {loadJsonFile, loadJsonFileSync, Reviver, BeforeParse} from './index.js';
 
-expectType<Reviver>(() => 1);
-expectType<Reviver>((a: string) => a.length);
-expectType<Reviver>((a: string, b: string) => a.length - b.length);
+expectAssignable<Reviver>(() => 1);
 
-expectType<BeforeParse>(data => data);
+expectType<BeforeParse>(data => data); // eslint-disable-line @typescript-eslint/no-unsafe-return
 
 expectType<Promise<JsonValue>>(loadJsonFile('unicorn.json'));
 
-expectType<JsonValue>(loadJsonFile.sync('unicorn.json'));
+expectType<JsonValue>(loadJsonFileSync('unicorn.json'));

@@ -1,19 +1,23 @@
-'use strict';
-const path = require('path');
-const {promisify} = require('util');
-const fs = require('graceful-fs');
-const stripBom = require('strip-bom');
-const parseJson = require('parse-json');
+import {readFileSync} from 'node:fs';
+import {readFile} from 'node:fs/promises';
 
-const parse = (data, filePath, options = {}) => {
-	data = stripBom(data);
+const parse = (buffer, {beforeParse, reviver} = {}) => {
+	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
+	let data = new TextDecoder().decode(buffer);
 
-	if (typeof options.beforeParse === 'function') {
-		data = options.beforeParse(data);
+	if (typeof beforeParse === 'function') {
+		data = beforeParse(data);
 	}
 
-	return parseJson(data, options.reviver, path.relative(process.cwd(), filePath));
+	return JSON.parse(data, reviver);
 };
 
-module.exports = async (filePath, options) => parse(await promisify(fs.readFile)(filePath, 'utf8'), filePath, options);
-module.exports.sync = (filePath, options) => parse(fs.readFileSync(filePath, 'utf8'), filePath, options);
+export async function loadJsonFile(filePath, options) {
+	const buffer = await readFile(filePath);
+	return parse(buffer, options);
+}
+
+export function loadJsonFileSync(filePath, options) {
+	const buffer = readFileSync(filePath);
+	return parse(buffer, options);
+}
