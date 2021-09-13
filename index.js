@@ -1,5 +1,6 @@
-import {readFileSync} from 'node:fs';
-import {readFile} from 'node:fs/promises';
+import {readFileSync, promises as fs} from 'node:fs';
+
+const {readFile} = fs;
 
 const parse = (buffer, {beforeParse, reviver} = {}) => {
 	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
