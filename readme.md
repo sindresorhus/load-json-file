@@ -2,7 +2,7 @@
 
 > Read and parse a JSON file
 
-It also [strips UTF-8 BOM](https://github.com/sindresorhus/strip-bom).
+It also strips UTF-8 [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM).
 
 ## Install
 
