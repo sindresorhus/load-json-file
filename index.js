@@ -3,7 +3,7 @@ import {readFileSync, promises as fs} from 'node:fs';
 const {readFile} = fs;
 
 const parse = (buffer, {beforeParse, reviver} = {}) => {
-	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
+	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder` will remove BOM.
 	let data = new TextDecoder().decode(buffer);
 
 	if (typeof beforeParse === 'function') {
